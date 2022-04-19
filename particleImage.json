@@ -30,7 +30,7 @@
   },
   "image": {
     "src": {
-      "path": "update path file",
+      "path": "https://github.com/Shareland/landing/blob/main/houseImage.png",
       "is_external": true
     },
     "size": {
