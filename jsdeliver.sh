@@ -1,0 +1,1 @@
+curl -s "https://purge.jsdelivr.net/gh/Shareland/landing@main/script.js"

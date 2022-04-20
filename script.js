@@ -1,4 +1,3 @@
-application/javascript;charset=utf-8
 const ParticleImageDisplayer = function(tag_id, canvas_el, params) {
   "use strict";
   this.pImageConfig = {
