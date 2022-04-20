@@ -13,7 +13,6 @@ const ParticleImageDisplayer = function(tag_id, canvas_el, params) {
       },
       
       
-      
       movement: {
         speed: 1,
         restless: {
@@ -45,8 +44,8 @@ const ParticleImageDisplayer = function(tag_id, canvas_el, params) {
       },
       size: {
         canvas_pct: 60,
-        min_px: 100,
-        max_px: 800
+        min_px: 400,
+        max_px: 1000
       }
     },
     interactions: {
