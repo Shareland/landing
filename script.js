@@ -45,7 +45,7 @@ const ParticleImageDisplayer = function(tag_id, canvas_el, params) {
       size: {
         canvas_pct: 100,
         min_px: 400,
-        max_px: 900
+        max_px: 1000
       }
     },
     interactions: {
@@ -457,9 +457,9 @@ window.particleImageDisplay = function(tag_id) {
   // create canvas element, set size, append to target element
   const canvas_el = document.createElement('canvas');
   canvas_el.className = canvas_classname;
-  canvas_el.style.width = "100%";
+  canvas_el.style.width = "95%";
   canvas_el.style.height = "100vh";
-  canvas_el.style.left = "-200";
+  // canvas_el.style.left = "-200";
   const canvas = document.getElementById(tag_id).appendChild(canvas_el);
 
 
