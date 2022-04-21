@@ -448,7 +448,7 @@ window.particleImageDisplay = function(tag_id) {
   canvas_el.className = canvas_classname;
   canvas_el.style.width = "100vw";
   canvas_el.style.height = "100vh";
-  canvas_el.style.left = "0";
+  canvas_el.style.left = "-200";
   const canvas = document.getElementById(tag_id).appendChild(canvas_el);
 
 
