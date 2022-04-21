@@ -3,16 +3,16 @@ const ParticleImageDisplayer = function(tag_id, canvas_el, params) {
   this.pImageConfig = {
     particles: {
       array: [],
-      density: 35,
+      density: 45,
       color: '#fff',
 
-      
+
       size: {
-        value: 2,
+        value: 4,
         random: false,
       },
-      
-      
+
+
       movement: {
         speed: 1,
         restless: {
@@ -27,11 +27,11 @@ const ParticleImageDisplayer = function(tag_id, canvas_el, params) {
           action: 'repulse'
         },
         on_click: {
-          enabled: true,
+          enabled: false,
           action: 'big_repulse'
         },
         on_touch: {
-          enabled: true,
+          enabled: false,
           action: 'repulse'
         },
         fn_array: []
@@ -50,8 +50,8 @@ const ParticleImageDisplayer = function(tag_id, canvas_el, params) {
     },
     interactions: {
       repulse: {
-        distance: 100,
-        strength: 200
+        distance: 75,
+        strength: 50
       },
       big_repulse: {
         distance: 300,
@@ -192,7 +192,18 @@ const ParticleImageDisplayer = function(tag_id, canvas_el, params) {
   pImg.functions.particles.SingleImageParticle.prototype.draw = function() {
     pImg.canvas.context.fillStyle = this.color;
     pImg.canvas.context.beginPath();
-    pImg.canvas.context.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+    // var tempRadius = this.radius * 3;
+    // var blueGradient = pImg.canvas.context.createLinearGradient(this.x-tempRadius, this.y-tempRadius, this.x+tempRadius, this.y-tempRadius);
+    // blueGradient.addColorStop(0, "#1933F4");
+    // blueGradient.addColorStop(1, "#1972F4");
+    // pImg.canvas.context.fillStyle = blueGradient;
+    pImg.canvas.context.moveTo(this.x-(this.radius*.9), this.y+this.radius);
+    pImg.canvas.context.lineTo(this.x-(this.radius*.9), this.y-(this.radius*.28));
+    pImg.canvas.context.lineTo(this.x, this.y-(this.radius));
+    pImg.canvas.context.lineTo(this.x+(this.radius*.9), this.y-(this.radius*.28));
+    pImg.canvas.context.lineTo(this.x+(this.radius*.9), this.y+this.radius);
+    pImg.canvas.context.lineTo(this.x-(this.radius*.9), this.y+this.radius);
+    // pImg.canvas.context.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
     pImg.canvas.context.fill();
   };
 
@@ -357,7 +368,7 @@ const ParticleImageDisplayer = function(tag_id, canvas_el, params) {
       timer = setTimeout(func, min_interval, event);
     };
   };
-  
+
   pImg.functions.utils.addEventActions = function(event) {
     const action_funcs = {
       repulse: pImg.functions.interactivity.repulseParticle,
@@ -456,7 +467,7 @@ window.particleImageDisplay = function(tag_id) {
     pImgDom.push(new ParticleImageDisplayer(tag_id, canvas, {}))
     /*
     NOTE: The this chunk normally deals with loading the params.json file. It's disabled for the CodePen demo so you can play with the parameters live by editing the pImageConfig object at the top.
-    
+
     // get params.json filepath from load parameters from element's data-params-src property
     const params_json = pImage_el.dataset.paramsSrc,
       xhr = new XMLHttpRequest();
