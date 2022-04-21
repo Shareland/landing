@@ -39,7 +39,7 @@ const ParticleImageDisplayer = function(tag_id, canvas_el, params) {
     },
     image: {
       src: {
-        path: "https://upload.wikimedia.org/wikipedia/commons/1/1a/Blank_US_Map_%28states_only%29.svg",
+        path: "https://raw.githubusercontent.com/Shareland/landing/main/map.svg",
         is_external: true
       },
       size: {
