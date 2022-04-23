@@ -43,7 +43,7 @@ const ParticleImageDisplayer = function(tag_id, canvas_el, params) {
         is_external: true
       },
       size: {
-        canvas_pct: 100,
+        canvas_pct: 80,
         min_px: 200,
         max_px: 1500
       }
